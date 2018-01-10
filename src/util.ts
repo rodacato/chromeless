@@ -29,7 +29,7 @@ export async function setViewport(
   viewport: DeviceMetrics = { width: 1, height: 1, scale: 1 },
 ): Promise<void> {
   const config: any = {
-    deviceScaleFactor: 1,
+    deviceScaleFactor: viewport.deviceScaleFactor || 2,
     mobile: false,
     scale: viewport.scale || 1,
     fitWindow: false, // as we cannot resize the window, `fitWindow: false` is needed in order for the viewport to be resizable

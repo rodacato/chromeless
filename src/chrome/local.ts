@@ -57,7 +57,7 @@ export default class LocalChrome implements Chrome {
     const { viewport = {} } = this.options
 
     const config: any = {
-      deviceScaleFactor: 1,
+      deviceScaleFactor: viewport.deviceScaleFactor || 2,
       mobile: false,
       scale: viewport.scale || 1,
       fitWindow: false, // as we cannot resize the window, `fitWindow: false` is needed in order for the viewport to be resizable
